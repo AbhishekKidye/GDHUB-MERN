@@ -119,7 +119,7 @@ exports.createDesignerReview =  catchAsyncError( async( req, res, next) =>{
 
     const isReviewed = designer.reviews.find(rev=> rev.user.toString() === req.user._id.toString());
     if(isReviewed){
-        designer.reviews.forEach(rev => {
+        designer.reviews.forEach((rev) => {
             if( rev.user.toString()=== req.user._id.toString())
             (rev.rating = rating),
             (rev.comment = comment)
@@ -132,7 +132,7 @@ exports.createDesignerReview =  catchAsyncError( async( req, res, next) =>{
 
     //average of ratings ((4+5+5+2)/4)=16/4=4
     let avg=0;
-    designer.reviews.forEach(rev=>{
+    designer.reviews.forEach((rev)=>{
         avg += rev.rating;
     })
     designer.ratings = avg / designer.reviews.length;

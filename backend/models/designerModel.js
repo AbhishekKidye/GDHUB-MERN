@@ -49,8 +49,8 @@ const designerSchema = new mongoose.Schema({
     identityProof:[
         {
             public_id:{
-                type:String,
-                required:true
+                type:Date,
+                default:Date.now
             },
             url:{
                 type:String,
@@ -75,7 +75,7 @@ const designerSchema = new mongoose.Schema({
             user: {
                 type: mongoose.Schema.ObjectId,
                 ref: "User",
-                required: true,
+                required:true,
             },
             name:{
                 type:String,

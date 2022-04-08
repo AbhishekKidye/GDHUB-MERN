@@ -21,6 +21,7 @@ import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import About from "./component/About/About";
 
+
 function App() {
 
 
@@ -69,6 +70,13 @@ function App() {
       <Route exact path="/password/reset/:token" component={ResetPassword} />
 
       <Route exact path="/about" component={About} />
+
+      {/* ORDER ROUTE */}
+      
+      
+
+
+      
 
       <Footer />
     </Router>

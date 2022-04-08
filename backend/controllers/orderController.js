@@ -7,10 +7,10 @@ const ApiFeaturess = require("../utils/apifeatures");
 //Create New Order
 exports.newOrder = catchAsyncError( async(req,res,next )=>{
 
-    const { id,orderKey,orderInfo, orderDetails, orderStatus, advancePayment, } = req.body;
+    const { orderKey,companyName, orderType,orderDescription, orderStatus,  } = req.body;
 
     const order = await Order.create({
-        id,orderKey,orderInfo, orderDetails, orderStatus, advancePayment, 
+        orderKey,companyName, orderType,orderDescription, orderStatus, 
         orderDate: Date.now(),
         user:req.user._id,
     });
